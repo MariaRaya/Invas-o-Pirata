@@ -6,6 +6,7 @@ var engine, world, backgroundImg;
 
 var canvas, angle, tower, ground;
 var cannon, cannonBall;
+var boat;
 
 var bolas = [];
 
@@ -36,6 +37,8 @@ function setup() {
   angle = 20;
   cannon = new Cannon(180, 110, 130, 100, angle);
   cannonBall = new CannonBall(cannon.x, cannon.y);
+  boat = new Boat(width, height - 60, 170, 170, -80);
+
 
 }
 
@@ -54,7 +57,7 @@ function draw() {
 
   // mostrando canhão na tela
   cannon.display();
- 
+  boat.display();
 
   for(i = 0; i < bolas.length; i++){
     mostrarCannonBalls(bolas[i],i);
